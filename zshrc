@@ -1,3 +1,11 @@
+export ZSH="/Users/mikecohen/.oh-my-zsh"
+plugins=(
+  git
+  zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   custom_fin dir custom_ruby vcs newline
@@ -52,13 +60,13 @@ alias cslogs='docker-sync logs -f'
 
 ### Git
 alias lsl='ls -G -lh --color=auto'
-lsp() { ls -lh $1 | egrep -v '.*.pyc$'; }
+function lsp() { ls -lh $1 | egrep -v '.*.pyc$'; }
 alias grep='grep -i --color=auto'
 alias gg='git grep -n --color --heading --break'
 alias .b='source ~/.bashrc && source ~/.bash_profile'
 alias gd='git diff'
 # gsr = Git Search Replace
-gsr() {
+function gsr() {
     search_string=$1
     replace_string=$2
     if [ -z $search_string ] || [ -z $replace_string ]
