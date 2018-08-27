@@ -40,8 +40,10 @@ source "${FIN_HOME}/fin-dev/bashrc"
 alias bp="atom ~/.bash_profile"
 alias bps="atom ~/.bash_profile_secrets"
 alias bpi="atom ~/.bash_includes"
-alias sc="source ~/.bash_profile"
-alias zrc="atom ~/.zshrc"
+alias bsc="source ~/.bash_profile"
+
+alias zp="atom ~/.zshrc"
+alias zc="source ~/.zshrc"
 
 ### Docker aliases
 alias dk='docker-compose'
@@ -55,6 +57,19 @@ alias grep='grep -i --color=auto'
 alias gg='git grep -n --color --heading --break'
 alias .b='source ~/.bashrc && source ~/.bash_profile'
 alias gd='git diff'
+# gsr = Git Search Replace
+gsr() {
+    search_string=$1
+    replace_string=$2
+    if [ -z $search_string ] || [ -z $replace_string ]
+    then
+        echo "-- Git Search & Replace (gsr)"
+        echo "-- usage: gsr search_string replace_string"
+    else
+        git grep -l $search_string | xargs sed -i '' "s/$search_string/$replace_string/g"
+        echo "Crushed it."
+    fi
+}
 
 ### brew bash completion
 # if [ -f `brew --prefix`/etc/bash_completion ]; then
