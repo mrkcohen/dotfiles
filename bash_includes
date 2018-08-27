@@ -1,0 +1,124 @@
+###
+### General bash configuration, to include in osx or linux servers
+###
+export EDITOR=vim
+HISTFILESIZE=100000
+HISTSIZE=10000
+export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth  # ignore same sucessive entries
+shopt -s histappend
+PROMPT_COMMAND='history -a'
+
+# up arrow bash history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+###
+### Prompt
+###
+# Show current git project info
+parse_git_branch_status() {
+  # local git_status="$(cat "/tmp/git-status-$$")"
+  # if $(git status 2> /dev/null | tail -n1)
+  local tab=\t
+  EMOJI=""
+  if $(git status 2> /dev/null | grep -qF "Changes not staged") ; then
+    EMOJI+=" 🙅🏻‍♂️ "
+  elif $(git status 2> /dev/null | grep -qF "Changes to be committed"); then
+    EMOJI+=" 🚀 "
+  fi
+  if $(git status 2> /dev/null | grep -qF "Untracked files"); then
+    EMOJI+=" ⚠️ "
+  fi
+  if $(git status 2> /dev/null | grep -qF "nothing to commit, working tree clean"); then
+    EMOJI+=" ✅ "
+  fi
+  echo $EMOJI
+}
+parse_git_dirty() {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo "*"
+}
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/[\1]$(parse_git_dirty) $(parse_git_branch_status) /"
+}
+current_virtualenv() {
+  echo `basename $VIRTUAL_ENV 2>/dev/null`
+}
+function __prompt_command() {
+  local LAST_EXIT_CODE="$?"
+
+  ### Define Colors
+  txtblack='\[\033[0;30m\]'
+  txtred='\[\033[0;31m\]'
+  txtlightgreen='\e[92m'
+  txtgreen='\[\033[0;32m\]'
+  txtorange='\[\033[0;33m\]'
+  txtblue='\[\033[0;34m\]'
+  txtpurple='\[\033[0;35m\]'
+  txtwhite='\[\033[0;37m\]'
+  txtlightblue='\[\e[34;1m\]'
+  txtlightred='\[\033[1;31m\]'
+  txtend='\[\033[0m\]'
+  BG_BLUE='\[$(tput setab 4)\]'
+
+  ### Define PS1
+  # extra vertical space
+  PS1="\n"
+  # username @ hostname, then indicate previous exit code
+  PS1+="${txtlightgreen}\u$DIM${txtend} ${txtwhite}@${txtend} ${txtlightred}\h${txtend}"
+  # python virtualenv, if we're in one
+  if [ -n "$(current_virtualenv)" ]
+  then
+    PS1+=" ${txtblue}($(current_virtualenv))${txtend}"
+  fi
+  # sun or rain based on last exit code
+  if [ $LAST_EXIT_CODE = 0 ]
+  then
+    PS1+=" ${txtorange}☀️${txtend}"
+  else
+    PS1+=" ${txtblue}💧${txtend}"
+  fi
+  PS1+="\n"
+  # pwd, git branch and prompt
+  PS1+="${txtlightblue}\$PWD${txtend} ${txtwhite}\$(parse_git_branch) $ "
+}
+export PROMPT_COMMAND=__prompt_command
+
+###
+### useful aliases
+###
+alias lsl='ls -G -lh --color=auto'
+lsp() { ls -lh $1 | egrep -v '.*.pyc$'; }
+alias grep='grep -i --color=auto'
+alias gg='git grep -n --color --heading --break'
+alias .b='source ~/.bashrc && source ~/.bash_profile'
+alias gd='git diff'
+
+# tmux 256 colors hack
+alias tmux="TERM=screen-256color-bce tmux"
+
+# rename the current tab in terminal/iterm2
+rn() { export PROMPT_COMMAND="echo -ne \"\033]0;$1\007\""; }
+
+# Get a rough outline of a python file - show class & function declarations, block comments, first line of docstrings
+pyoutline() { egrep --color=auto '^[\t ]*class|^[\t ]*def|^[\t ]*###.+$|^[\t ]*""".+$' $1; } # apparently \s doesn't work so I use tab or space
+wcr() { wc -l `find . -type f | egrep "$1$"`; } # recursive word count, pass in the file extension
+
+alias ip='curl icanhazip.com'
+
+# create an empty new bash script
+bashscript() { touch $1; chmod a+x $1; echo -e "#!/bin/bash\n\n" > $1; vim $1; }
+
+# gsr = Git Search Replace
+gsr() {
+    search_string=$1
+    replace_string=$2
+    if [ -z $search_string ] || [ -z $replace_string ]
+    then
+        echo "-- Git Search & Replace (gsr)"
+        echo "-- usage: gsr search_string replace_string"
+    else
+        git grep -l $search_string | xargs sed -i '' "s/$search_string/$replace_string/g"
+        echo "Crushed it."
+    fi
+}

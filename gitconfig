@@ -1,0 +1,44 @@
+[user]
+	name = Mike Cohen
+	email = mrkcohen@gmail.com
+[core]
+	excludesfile = /Users/mikecohen/.gitignore
+[rerere]
+	enabled = 1
+[remote "origin"]
+	push = HEAD
+[branch "master"]
+	merge = refs/heads/master
+[alias]
+  br = branch
+	browse = "!hub browse"
+	ci = commit -a
+	cm = commit -m
+	co = checkout
+	dwc = diff -w -M --color-words
+	everything = log --pretty=format: --name-only --diff-filter=A
+	fix = rebase -i origin/master
+	gg = grep
+  new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+	re = remote -v
+	recent-branches = --paginate for-each-ref --format='%(committerdate:relative)%09%(refname:short)' --sort='-committerdate' refs/heads
+	recent-branches-origin = --paginate for-each-ref --format='%(committerdate:relative)%09%(refname:short)' --sort='-committerdate' refs/remotes/origin
+	st = status
+	sup = "submodule foreach 'git co master; git up'"
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	up = "!git remote update origin -p; git merge --ff-only @{u}"
+[push]
+	default = simple
+[merge]
+	defaultToUpstream = true
+[color]
+	ui = true
+[grep]
+	linenumber = true
+[hub]
+	host = github.braintreeps.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

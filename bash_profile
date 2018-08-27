@@ -1,33 +1,12 @@
-# Customise the Powerlevel9k prompts
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  custom_fin dir custom_ruby vcs newline
-  # icons_test newline
-  status
-)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+###
+### OSX-specific .bash_profile
+###
+HISTFILESIZE=100000000
+HISTSIZE=100000
 
-# Add the custom Fin icon prompt segment
-POWERLEVEL9K_CUSTOM_FIN="echo -n '\uF68B' fin"
-POWERLEVEL9K_CUSTOM_FIN_FOREGROUND="white"
-POWERLEVEL9K_CUSTOM_FIN_BACKGROUND="darkblue"
+### Source general (osx or linux) bash setup
+[[ -f ~/.bash_includes ]] && source ~/.bash_includes
 
-POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '
-POWERLEVEL9K_VCS_UNTRACKED_ICON=$'⚠️ '
-POWERLEVEL9K_VCS_UNSTAGED_ICON=$'🙅🏻‍♂️'
-POWERLEVEL9K_VCS_STAGED_ICON=$'🚀'
-
-# Load Nerd Fonts with Powerlevel9k theme for Zsh
-POWERLEVEL9K_MODE='nerdfont-complete'
-
-source  ~/powerlevel9k/powerlevel9k.zsh-theme
-
-# Misc
-HISTFILESIZE=100000
-HISTSIZE=10000
-
-
-### Imported from bash_profile
 ### Source other bash files with specific/private setups
 if [ -f ~/.bash_profile_secrets ] ; then source ~/.bash_profile_secrets; fi
 
@@ -41,36 +20,26 @@ alias bp="atom ~/.bash_profile"
 alias bps="atom ~/.bash_profile_secrets"
 alias bpi="atom ~/.bash_includes"
 alias sc="source ~/.bash_profile"
-alias zrc="atom ~/.zshrc"
 
 ### Fin aliases
 alias dk='docker-compose'
 alias dlogs='docker-compose logs -f --tail=50'
 alias cslogs='docker-sync logs -f'
 
-### Git
-alias lsl='ls -G -lh --color=auto'
-lsp() { ls -lh $1 | egrep -v '.*.pyc$'; }
-alias grep='grep -i --color=auto'
-alias gg='git grep -n --color --heading --break'
-alias .b='source ~/.bashrc && source ~/.bash_profile'
-alias gd='git diff'
-
 ### brew bash completion
-# if [ -f `brew --prefix`/etc/bash_completion ]; then
-# . `brew --prefix`/etc/bash_completion
-# fi
-
-### git completion
-fpath=(~/.zsh $fpath)
-
-autoload -U compinit && compinit
-zmodload -i zsh/complist
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+. `brew --prefix`/etc/bash_completion
+fi
 
 ### aws completion
-# if [ -f `brew --prefix`/bin/aws_zsh_completer ]; then
-source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
-# fi
+if [ -f `brew --prefix`/bin/aws_completer ]; then
+complete -C aws_completer aws
+fi
+
+### git completion
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 ### Setup Fin to work via Alfred
 ### https://github.com/kortina/fin-alfred
