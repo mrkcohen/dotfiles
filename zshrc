@@ -34,24 +34,18 @@ source  ~/powerlevel9k/powerlevel9k.zsh-theme
 HISTFILESIZE=100000
 HISTSIZE=10000
 
-
-### Imported from bash_profile
 ### Source other bash files with specific/private setups
-if [ -f ~/.bash_profile_secrets ] ; then source ~/.bash_profile_secrets; fi
-
-### Fin path
-export FIN_HOME=~/code/fin-core-beta
-export FIN_SSH_USERNAME="mike_cohen"
-source "${FIN_HOME}/fin-dev/bashrc"
+if [ -f ~/.fin_profile_secrets ] ; then source ~/.fin_profile_secrets; fi
+alias fps="atom ~/.fin_profile_secrets"
 
 ### Aliases
 alias bp="atom ~/.bash_profile"
-alias bps="atom ~/.bash_profile_secrets"
+# alias bps="atom ~/.bash_profile_secrets"
 alias bpi="atom ~/.bash_includes"
-alias bsc="source ~/.bash_profile"
+alias sourcebp="source ~/.bash_profile"
 
-alias zp="atom ~/.zshrc"
-alias zc="source ~/.zshrc"
+alias zshconfig="atom ~/.zshrc"
+alias sourcezsh="source ~/.zshrc"
 
 ### Docker aliases
 alias dk='docker-compose'
@@ -65,6 +59,7 @@ alias grep='grep -i --color=auto'
 alias gg='git grep -n --color --heading --break'
 alias .b='source ~/.bashrc && source ~/.bash_profile'
 alias gd='git diff'
+
 # gsr = Git Search Replace
 function gsr() {
     search_string=$1
@@ -79,11 +74,6 @@ function gsr() {
     fi
 }
 
-### brew bash completion
-# if [ -f `brew --prefix`/etc/bash_completion ]; then
-# . `brew --prefix`/etc/bash_completion
-# fi
-
 ### git completion
 fpath=(~/.zsh $fpath)
 
@@ -91,9 +81,9 @@ autoload -U compinit && compinit
 zmodload -i zsh/complist
 
 ### aws completion
-# if [ -f `brew --prefix`/bin/aws_zsh_completer ]; then
 source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
-# fi
+
+### Imported from bash_profile
 
 ### Setup Fin to work via Alfred
 ### https://github.com/kortina/fin-alfred
@@ -107,7 +97,7 @@ then
   export PATH=$HOME/.datacoral/cli/bin:$PATH
 fi
 
-### NB: Understand below
+### TODO: Understand the below better
 
 ###
 ### Path-ey things
