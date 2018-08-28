@@ -45,3 +45,4 @@
 [pager]
 	branch = false
 	diff = false
+	grep = false
