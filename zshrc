@@ -8,18 +8,30 @@ source $ZSH/oh-my-zsh.sh
 
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  custom_fin dir custom_ruby vcs newline
+  custom_fin dir vcs newline
   # icons_test newline
   status
 )
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
+# Set colors
+# To see all the colors, run: for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
+# POWERLEVEL9K_COLOR_SCHEME='light'
+POWERLEVEL9K_DIR_FOREGROUND='white'
+POWERLEVEL9K_DIR_BACKGROUND='009' # dark-grey
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='007' # light-grey
+# POWERLEVEL9K_VCS_BACKGROUND="10" # light/pastel green
+POWERLEVEL9K_VCS_FOREGROUND='white'
+
+POWERLEVEL9K_DIR_FOREGROUND="white"
+
 # Add the custom Fin icon prompt segment
 POWERLEVEL9K_CUSTOM_FIN="echo -n '\uF68B' fin"
 POWERLEVEL9K_CUSTOM_FIN_FOREGROUND="white"
-POWERLEVEL9K_CUSTOM_FIN_BACKGROUND="darkblue"
+POWERLEVEL9K_CUSTOM_FIN_BACKGROUND="017" # also like darkblue
 
+# Customize the git icons/emojis
 POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '
 POWERLEVEL9K_VCS_UNTRACKED_ICON=$'⚠️ '
 POWERLEVEL9K_VCS_UNSTAGED_ICON=$'🙅🏻‍♂️'
@@ -28,6 +40,7 @@ POWERLEVEL9K_VCS_STAGED_ICON=$'🚀'
 # Load Nerd Fonts with Powerlevel9k theme for Zsh
 POWERLEVEL9K_MODE='nerdfont-complete'
 
+# Source/turn on Powerlevel9k
 source  ~/powerlevel9k/powerlevel9k.zsh-theme
 
 # Misc
