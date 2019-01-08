@@ -6,15 +6,15 @@
 # When a symlink already exists, replace it
 
 function create_symlink {
-  echo "created symlink: $2 -> $1"
+  echo "Created symlink: $2 -> $1"
   ln -s $1 $2
 }
 
 function install_oh_my_zsh {
   if [ -d ${HOME}/.oh-my-zsh/ ]; then
-    echo "found ~/.oh-my-zsh"
+    echo "Found ~/.oh-my-zsh"
   else
-    echo "installing oh-my-zsh"
+    echo "Installing oh-my-zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   fi
 }
@@ -22,23 +22,24 @@ function install_oh_my_zsh {
 function switch_to_zsh {
   if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
      # assume Zsh
-     echo 'using zsh already'
+     echo 'Using zsh already'
   elif [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
      # assume Bash
-     echo 'switching bash --> zsh'
+     echo 'Switching bash --> zsh'
      chsh -s /bin/zsh
-     echo 'open a new shell tab/window to get zsh'
+     echo 'Open a new shell tab/window to get zsh'
   else
      # asume something else
-     echo 'not sure what shell this is, switching to zsh anyways'
+     echo 'Not sure what shell this is, switching to zsh anyways'
      chsh -s /bin/zsh
-     echo 'open a new shell tab/window to get zsh'
+     echo 'Open a new shell tab/window to get zsh'
   fi
 }
 
 function install_powerlevel9k {
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k
+  echo "Don't forget to update the font in iTerm to 'Hack Regular Nerd Font Complete'"
 }
 
 function run_brewfile {
