@@ -1,4 +1,5 @@
-export ZSH="/Users/mikecohen/.oh-my-zsh"
+# Ensure home directory name is correct
+export ZSH="/Users/michael/.oh-my-zsh"
 plugins=(
   git
   zsh-syntax-highlighting
@@ -41,7 +42,8 @@ POWERLEVEL9K_VCS_STAGED_ICON=$'🚀'
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Source/turn on Powerlevel9k
-source  ~/powerlevel9k/powerlevel9k.zsh-theme
+# source  ~/powerlevel9k/powerlevel9k.zsh-theme
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 
 # Misc
 HISTFILESIZE=100000
@@ -94,21 +96,21 @@ autoload -U compinit && compinit
 zmodload -i zsh/complist
 
 ### aws completion
-source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+# source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
 ### Imported from bash_profile
 
 ### Setup Fin to work via Alfred
 ### https://github.com/kortina/fin-alfred
-export FIN_FROM_EMAIL="mrkcohen@gmail.com"
-export FIN_TO_EMAIL="mike.cohen@fin.com" # ask Fin for this if you don't know it
-export FIN_ALFRED_LOG="/dev/null"
+# export FIN_FROM_EMAIL="mrkcohen@gmail.com"
+# export FIN_TO_EMAIL="mike.cohen@fin.com" # ask Fin for this if you don't know it
+# export FIN_ALFRED_LOG="/dev/null"
 
 ### Datacoral
-if [[ ":$PATH:" != *":$HOME/.datacoral/cli/bin:"* ]];
-then
-  export PATH=$HOME/.datacoral/cli/bin:$PATH
-fi
+# if [[ ":$PATH:" != *":$HOME/.datacoral/cli/bin:"* ]];
+# then
+#   export PATH=$HOME/.datacoral/cli/bin:$PATH
+# fi
 
 ### TODO: Understand the below better
 
@@ -117,11 +119,11 @@ fi
 ###
 # the classic MySQL library path fix for OSX  (un-comment if installing mysql)
 # export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
-export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
+# export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
 
 # VirtualEnvWrapper
-export WORKON_HOME=~/virtualenvs
-if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then source /usr/local/bin/virtualenvwrapper.sh; fi
+# export WORKON_HOME=~/virtualenvs
+# if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then source /usr/local/bin/virtualenvwrapper.sh; fi
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; else echo rbenv not installed; fi
@@ -130,11 +132,11 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; else echo rbenv not ins
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; else echo pyenv not installed; fi
 
 # go path
-export GOPATH=$HOME/go
+# export GOPATH=$HOME/go
 
 # generate ctags in different languages
-alias ctags_ruby='ctags -R --languages=ruby --exclude=.git --exclude=vendor/bundle --exclude=node_modules --exclude=coverage'
-alias ctags_python='ctags -R --languages=python --exclude=.git --exclude=node_modules --exclude=coverage'
+# alias ctags_ruby='ctags -R --languages=ruby --exclude=.git --exclude=vendor/bundle --exclude=node_modules --exclude=coverage'
+# alias ctags_python='ctags -R --languages=python --exclude=.git --exclude=node_modules --exclude=coverage'
 
 # EC2 Command Line Tools - not really using recently
 # export JAVA_HOME="`/usr/libexec/java_home -v 1.6`"
@@ -157,8 +159,8 @@ alias karma='./node_modules/karma/bin/karma'
 alias karmaone='./node_modules/karma/bin/karma start --singleRun --browsers PhantomJS'
 
 # added by Anaconda2 4.3.1 installer
-export PATH="/anaconda/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export PATH="/anaconda/bin:$PATH"
+#
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
