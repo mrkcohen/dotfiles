@@ -30,7 +30,7 @@ function switch_to_zsh {
 
 function install_powerlevel9k {
   if [ -d ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/ ] ; then
-    echo "zsh sytnax highlighting already installed"
+    echo "zsh syntax highlighting already installed"
   else
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   fi
