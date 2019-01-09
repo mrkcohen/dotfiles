@@ -1,7 +1,7 @@
 # dotfiles
 
-My configuration files for git, bash, zsh
+My configuration files for git, bash, zsh, iTerm.
 
-# setup
+## setup
 
-Run `bash dev_setup.sh` to install
+Run `bash dev_setup.sh` to install everything.

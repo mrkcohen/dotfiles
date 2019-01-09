@@ -1,24 +1,42 @@
+## Brewfile
+
+# Taps
+tap 'Homebrew/bundle'
+tap 'caskroom/fonts'
+tap 'sambadevi/powerlevel9k'
+
 # Basics
-brew install docker
-brew install git
-brew install postgresql
-brew install wget
+brew 'ack'
+brew 'docker'
+brew 'httpie'
+brew 'postgresql'
+brew 'powerlevel9k'
+brew 'wget'
 
-# Install Cask
-install caskroom/cask/brew-cask
+# Programming
+brew 'git'
+brew 'jq'
+brew 'rbenv'
+brew 'python'
 
-# Apps
-cask install alfred
-cask install atom
-cask install caffeine
-cask install google-chrome
-cask install iterm2
-cask install slack
-
-# Terminal
-tap sambadevi/powerlevel9k
-install powerlevel9k
+## Caskfile
+cask '1password'
+cask 'alfred'
+cask 'atom'
+cask 'chrome-devtools'
+cask 'dropbox'
+cask 'google-chrome'
+cask 'ngrok'
+cask 'flash-player'
+cask 'flux'
+cask 'iterm2'
+# cask 'slack' #  - use App Store
+cask 'spectacle'
+cask 'spotify'
+cask 'vlc'
 
 # Fonts
-tap caskroom/fonts
-cask install font-hack-nerd-font
+cask 'font-droidsansmono-nerd-font'
+cask 'font-droidsansmono-nerd-font-mono'
+cask 'font-droid-sans-mono-for-powerline'
+cask 'font-hack-nerd-font'
