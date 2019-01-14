@@ -1,5 +1,5 @@
 # Ensure home directory name is correct
-export ZSH="/Users/michael/.oh-my-zsh"
+export ZSH="/Users/mikecohen/.oh-my-zsh"
 plugins=(
   git
   zsh-syntax-highlighting
@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  custom_fin dir vcs newline
+  custom_affirm dir vcs newline
   # icons_test newline
   status
 )
@@ -28,9 +28,9 @@ POWERLEVEL9K_VCS_FOREGROUND='white'
 POWERLEVEL9K_DIR_FOREGROUND="white"
 
 # Add the custom Fin icon prompt segment
-POWERLEVEL9K_CUSTOM_FIN="echo -n '\uF68B' fin"
-POWERLEVEL9K_CUSTOM_FIN_FOREGROUND="white"
-POWERLEVEL9K_CUSTOM_FIN_BACKGROUND="017" # also like darkblue
+POWERLEVEL9K_CUSTOM_AFFIRM="echo -n '\uF68B' affirm"
+POWERLEVEL9K_CUSTOM_AFFIRM_FOREGROUND="white"
+POWERLEVEL9K_CUSTOM_AFFIRM_BACKGROUND="017" # also like darkblue
 
 # Customize the git icons/emojis
 POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '

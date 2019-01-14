@@ -14,18 +14,19 @@ brew 'powerlevel9k'
 brew 'wget'
 
 # Programming
-brew 'git'
+# brew 'git'
 brew 'jq'
 brew 'rbenv'
 brew 'python'
+brew 'pyenv'
 
 ## Caskfile
 cask '1password'
 cask 'alfred'
 cask 'atom'
 cask 'chrome-devtools'
-cask 'dropbox'
-cask 'google-chrome'
+# cask 'dropbox'
+# cask 'google-chrome'
 cask 'ngrok'
 cask 'flash-player'
 cask 'flux'
