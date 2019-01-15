@@ -42,7 +42,6 @@ POWERLEVEL9K_VCS_STAGED_ICON=$'🚀'
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Source/turn on Powerlevel9k
-# source  ~/powerlevel9k/powerlevel9k.zsh-theme
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 
 # Misc
@@ -155,8 +154,8 @@ alias showhidefilesoff='defaults write com.apple.Finder AppleShowAllFiles NO; ki
 
 
 ### NPM Module common scripts
-alias karma='./node_modules/karma/bin/karma'
-alias karmaone='./node_modules/karma/bin/karma start --singleRun --browsers PhantomJS'
+# alias karma='./node_modules/karma/bin/karma'
+# alias karmaone='./node_modules/karma/bin/karma start --singleRun --browsers PhantomJS'
 
 # added by Anaconda2 4.3.1 installer
 # export PATH="/anaconda/bin:$PATH"
