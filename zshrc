@@ -27,7 +27,7 @@ POWERLEVEL9K_VCS_FOREGROUND='white'
 
 POWERLEVEL9K_DIR_FOREGROUND="white"
 
-# Add the custom Fin icon prompt segment
+# Add the custom Affirm icon prompt segment
 POWERLEVEL9K_CUSTOM_AFFIRM="echo -n '\uF68B' affirm"
 POWERLEVEL9K_CUSTOM_AFFIRM_FOREGROUND="white"
 POWERLEVEL9K_CUSTOM_AFFIRM_BACKGROUND="017" # also like darkblue
@@ -99,18 +99,6 @@ zmodload -i zsh/complist
 
 ### Imported from bash_profile
 
-### Setup Fin to work via Alfred
-### https://github.com/kortina/fin-alfred
-# export FIN_FROM_EMAIL="mrkcohen@gmail.com"
-# export FIN_TO_EMAIL="mike.cohen@fin.com" # ask Fin for this if you don't know it
-# export FIN_ALFRED_LOG="/dev/null"
-
-### Datacoral
-# if [[ ":$PATH:" != *":$HOME/.datacoral/cli/bin:"* ]];
-# then
-#   export PATH=$HOME/.datacoral/cli/bin:$PATH
-# fi
-
 ### TODO: Understand the below better
 
 ###
@@ -163,3 +151,4 @@ alias showhidefilesoff='defaults write com.apple.Finder AppleShowAllFiles NO; ki
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
