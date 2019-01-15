@@ -7,6 +7,7 @@ tap 'sambadevi/powerlevel9k'
 
 # Basics
 brew 'ack'
+brew 'ctop'
 brew 'docker'
 brew 'httpie'
 brew 'postgresql'
