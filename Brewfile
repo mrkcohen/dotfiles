@@ -21,6 +21,8 @@ brew 'jq'
 brew 'rbenv'
 brew 'python2'
 brew 'pyenv'
+brew 'pyenv-virtualenv'
+brew 'pyenv-virtualenvwrapper'
 
 ## Caskfile
 cask '1password'
