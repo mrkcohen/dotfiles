@@ -49,17 +49,18 @@ HISTFILESIZE=100000
 HISTSIZE=10000
 
 ### Source other bash files with specific/private setups
-if [ -f ~/.fin_profile_secrets ] ; then source ~/.fin_profile_secrets; fi
-alias fps="atom ~/.fin_profile_secrets"
+if [ -f ~/.affirm_specifics ] ; then source ~/.affirm_specifics; fi
+alias modaffirm="atom ~/.affirm_specifics"
 
 ### Aliases
 alias bp="atom ~/.bash_profile"
-# alias bps="atom ~/.bash_profile_secrets"
 alias bpi="atom ~/.bash_includes"
 alias sourcebp="source ~/.bash_profile"
 
 alias zshconfig="atom ~/.zshrc"
 alias sourcezsh="source ~/.zshrc"
+
+alias dot="cd ~/code/dotfiles"
 
 ### Docker aliases
 alias dk='docker-compose'
