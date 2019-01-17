@@ -53,11 +53,11 @@ if [ -f ~/.affirm_specifics ] ; then source ~/.affirm_specifics; fi
 alias modaffirm="atom ~/.affirm_specifics"
 
 ### Aliases
-alias bp="atom ~/.bash_profile"
-alias bpi="atom ~/.bash_includes"
+alias bp="atom ~/code/dotfiles/bash_profile"
+alias bpi="atom ~/code/dotfiles/bash_includes"
 alias sourcebp="source ~/.bash_profile"
 
-alias zshconfig="atom ~/.zshrc"
+alias zshconfig="atom ~/code/dotfiles/zshrc"
 alias sourcezsh="source ~/.zshrc"
 
 alias dot="cd ~/code/dotfiles"

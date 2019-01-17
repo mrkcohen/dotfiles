@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ###
 ### General bash configuration, to include in osx or linux servers
 ###
