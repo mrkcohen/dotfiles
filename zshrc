@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   custom_affirm dir vcs newline
   # icons_test newline
-  status
+  context virtualenv status
 )
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
@@ -22,21 +22,26 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_DIR_FOREGROUND='white'
 POWERLEVEL9K_DIR_BACKGROUND='009' # dark-grey
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='007' # light-grey
+
 # POWERLEVEL9K_VCS_BACKGROUND="10" # light/pastel green
 POWERLEVEL9K_VCS_FOREGROUND='white'
-
-POWERLEVEL9K_DIR_FOREGROUND="white"
-
-# Add the custom Affirm icon prompt segment
-POWERLEVEL9K_CUSTOM_AFFIRM="echo -n '\uF68B' affirm"
-POWERLEVEL9K_CUSTOM_AFFIRM_FOREGROUND="white"
-POWERLEVEL9K_CUSTOM_AFFIRM_BACKGROUND="017" # also like darkblue
 
 # Customize the git icons/emojis
 POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '
 POWERLEVEL9K_VCS_UNTRACKED_ICON=$'⚠️ '
 POWERLEVEL9K_VCS_UNSTAGED_ICON=$'🙅🏻‍♂️'
 POWERLEVEL9K_VCS_STAGED_ICON=$'🚀'
+
+# Add the custom Affirm icon prompt segment
+POWERLEVEL9K_CUSTOM_AFFIRM="echo -n '\uF68B' affirm"
+POWERLEVEL9K_CUSTOM_AFFIRM_FOREGROUND="white"
+POWERLEVEL9K_CUSTOM_AFFIRM_BACKGROUND="017" # also like darkblue
+
+# Context
+POWERLEVEL9K_CONTEXT_BACKGROUND="white" # not working
+
+# VirtualEnv
+POWERLEVEL9K_VIRTUALENV_BACKGROUND="white"
 
 # Load Nerd Fonts with Powerlevel9k theme for Zsh
 POWERLEVEL9K_MODE='nerdfont-complete'
