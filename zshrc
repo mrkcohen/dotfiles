@@ -1,5 +1,6 @@
 # Ensure home directory name is correct
-export ZSH="/Users/mikecohen/.oh-my-zsh"
+export USER=$(whoami)
+export ZSH="/Users/$USER/.oh-my-zsh"
 plugins=(
   git
   zsh-syntax-highlighting
