@@ -111,13 +111,7 @@ zmodload -i zsh/complist
 ###
 ### Path-ey things
 ###
-# the classic MySQL library path fix for OSX  (un-comment if installing mysql)
-# export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
 export PATH=$(pyenv root)/shims:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
-
-# VirtualEnvWrapper
-# export WORKON_HOME=~/virtualenvs
-# if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then source /usr/local/bin/virtualenvwrapper.sh; fi
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; else echo rbenv not installed; fi
@@ -129,16 +123,8 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualen
 # alias ctags_ruby='ctags -R --languages=ruby --exclude=.git --exclude=vendor/bundle --exclude=node_modules --exclude=coverage'
 # alias ctags_python='ctags -R --languages=python --exclude=.git --exclude=node_modules --exclude=coverage'
 
-### OSX-specific aliases
-# run local mongodb (from /usr/local) and put it in the background
-# alias mongolocal='sudo mongod run --config /usr/local/etc/mongod.conf --fork && sleep 1 && tail -20 /usr/local/var/log/mongodb/mongod.log'
-
 # toggle show/hide hidden files in Finder
 alias showhidefileson='defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder'
 alias showhidefilesoff='defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder'
-
-### NPM Module common scripts
-# alias karma='./node_modules/karma/bin/karma'
-# alias karmaone='./node_modules/karma/bin/karma start --singleRun --browsers PhantomJS'
 
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
