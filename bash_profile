@@ -9,9 +9,6 @@ if [ -f ~/.affirm_specifics ] ; then source ~/.affirm_specifics; fi
 ### Source general (osx or linux) bash setup
 [[ -f ~/.bash_includes ]] && source ~/.bash_includes
 
-### Path
-export HOME=~/code/fin-core-beta
-
 ### Aliases
 alias bp="atom ~/.bash_profile"
 alias bpi="atom ~/.bash_includes"
