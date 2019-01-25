@@ -10,7 +10,7 @@ if [ -f ~/.affirm_specifics ] ; then source ~/.affirm_specifics; fi
 [[ -f ~/.bash_includes ]] && source ~/.bash_includes
 
 # Path
-export HOME=~/code/
+# export HOME=~/code/
 
 ### Aliases
 alias bp="atom ~/.bash_profile"
