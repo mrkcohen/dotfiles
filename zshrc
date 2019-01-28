@@ -56,7 +56,7 @@ HISTSIZE=10000
 
 ### Source other bash files with specific/private setups
 if [ -f ~/.affirm_specifics ] ; then source ~/.affirm_specifics; fi
-alias modaffirm="atom ~/.affirm_specifics"
+alias affirmcfg="atom ~/.affirm_specifics"
 
 ### Aliases
 alias bp="atom ~/code/dotfiles/bash_profile"
