@@ -41,7 +41,7 @@ parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
 }
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/[\1]$(parse_git_dirty) $(parse_git_branch_status)/"
+  git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/[\1]$(parse_git_dirty)$(parse_git_branch_status)/"
 }
 current_virtualenv() {
   echo `basename $VIRTUAL_ENV 2>/dev/null`
@@ -82,7 +82,7 @@ function __prompt_command() {
   fi
   PS1+="\n"
   # pwd, git branch and prompt
-  PS1+="${txtlightblue}\$PWD${txtend} ${txtwhite}\$(parse_git_branch) $ "
+  PS1+="${txtlightblue}\$PWD${txtend} ${txtwhite}\$(parse_git_branch)  $ "
 }
 export PROMPT_COMMAND=__prompt_command
 
