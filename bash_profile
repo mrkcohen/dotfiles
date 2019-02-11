@@ -15,7 +15,7 @@ if [ -f ~/.affirm_specifics ] ; then source ~/.affirm_specifics; fi
 ### Aliases
 alias bp="atom ~/.bash_profile"
 alias bpi="atom ~/.bash_includes"
-alias sc="source ~/.bash_profile"
+alias sourcebp="source ~/.bash_profile"
 alias dk='docker-compose'
 alias dlogs='docker-compose logs -f --tail=50'
 alias cslogs='docker-sync logs -f'
