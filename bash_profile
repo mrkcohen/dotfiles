@@ -41,6 +41,7 @@ fi
 ### Path-ey things
 ###
 export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
+export PATH="$PATH:/Users/mikecohen/code/arcanist/bin/"
 
 # generate ctags in different languages
 # alias ctags_ruby='ctags -R --languages=ruby --exclude=.git --exclude=vendor/bundle --exclude=node_modules --exclude=coverage'
