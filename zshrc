@@ -10,7 +10,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  custom_affirm dir vcs newline
+  custom_label dir vcs newline
   # icons_test newline
   context virtualenv status
 )
@@ -33,10 +33,10 @@ POWERLEVEL9K_VCS_UNTRACKED_ICON=$'⚠️ '
 POWERLEVEL9K_VCS_UNSTAGED_ICON=$'🙅🏻‍♂️'
 POWERLEVEL9K_VCS_STAGED_ICON=$'🚀'
 
-# Add the custom Affirm icon prompt segment
-POWERLEVEL9K_CUSTOM_AFFIRM="echo -n '\uF68B' affirm"
-POWERLEVEL9K_CUSTOM_AFFIRM_FOREGROUND="white"
-POWERLEVEL9K_CUSTOM_AFFIRM_BACKGROUND="017" # also like darkblue
+# Add a custom label icon prompt segment
+POWERLEVEL9K_CUSTOM_LABEL="echo -n 💻 laptop"
+POWERLEVEL9K_CUSTOM_LABEL_FOREGROUND="white"
+POWERLEVEL9K_CUSTOM_LABEL_BACKGROUND="017" # also like darkblue
 
 # Context
 POWERLEVEL9K_CONTEXT_BACKGROUND="white" # not working
