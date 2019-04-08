@@ -29,7 +29,7 @@
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	up = "!git remote update origin -p; git merge --ff-only @{u}"
 [push]
-	default = simple
+	default = current
 [merge]
 	defaultToUpstream = true
 [color]
@@ -45,3 +45,5 @@
 	branch = false
 	diff = false
 	grep = false
+[gpg]
+	program = gpg2
