@@ -80,6 +80,8 @@ alias grep='grep -i --color=auto'
 alias gg='git grep -n --color --heading --break'
 alias .b='source ~/.bashrc && source ~/.bash_profile'
 alias gd='git diff'
+alias gr='git rebase origin/master'
+alias gu='git add . && git ci --amend --no-edit'
 
 # gsr = Git Search Replace
 function gsr() {
