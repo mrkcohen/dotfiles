@@ -44,5 +44,4 @@ function install_powerlevel9k {
 }
 
 install_oh_my_zsh
-switch_to_zsh
 install_powerlevel9k
