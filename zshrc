@@ -55,8 +55,8 @@ HISTFILESIZE=100000
 HISTSIZE=10000
 
 ### Source other bash files with specific/private setups
-if [ -f ~/.affirm_specifics ] ; then source ~/.affirm_specifics; fi
-alias affirmcfg="atom ~/.affirm_specifics"
+if [ -f ~/.pax_specifics ] ; then source ~/.pax_specifics; fi
+alias paxcfg="atom ~/.pax_specifics"
 
 ### Aliases
 alias bp="atom ~/code/dotfiles/bash_profile"
