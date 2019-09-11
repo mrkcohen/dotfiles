@@ -97,6 +97,44 @@ function gsr() {
     fi
 }
 
+### This function prunes references to deleted remote branches and
+### deletes local branches that have been merged and/or deleted from the remotes.
+### It is intended to be run when on a master branch, and warns when it isn't.
+gclean (){
+  local BRANCH=`git rev-parse --abbrev-ref HEAD`
+  # Warning if not on a master* branch
+  if [[ $BRANCH != master* ]]
+  then
+    echo -e "\e[91m!! WARNING: It looks like you are not on a master branch !!\e[39m"
+    read -r -p "Are you sure you want to continue? [y/N] " response
+    if ! [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+    then
+      echo "Aborted. Nothing was changed."
+      return 1
+    fi
+  fi
+  echo "Simulating a clean on $BRANCH ..." \
+  && echo "===== 1/2: simulating pruning origin =====" \
+  && git remote prune origin --dry-run \
+  && echo "===== 2/2: simulating cleaning local branches merged to $BRANCH =====" \
+  && git branch --merged $BRANCH | grep -v "^\**\s*master"  \
+  && echo "=====" \
+  && echo "Simulation complete."
+  read -r -p "Do you want to proceed with the above clean? [y/N] " response
+  if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+  then
+    echo "Running a clean on $BRANCH ..."
+    echo "===== 1/2: pruning origin =====" \
+    && git remote prune origin \
+    && echo "===== 2/2: cleaning local branches merged to $BRANCH =====" \
+    && git branch --merged $BRANCH | grep -v "^\**\s*master" | xargs git branch -d \
+    && echo "=====" \
+    && echo "Clean finished."
+  else
+    echo "Aborted. Nothing was changed."
+  fi
+}
+
 ### git completion
 fpath=(~/.zsh $fpath)
 
