@@ -100,7 +100,7 @@ function gsr() {
 ### This function prunes references to deleted remote branches and
 ### deletes local branches that have been merged and/or deleted from the remotes.
 ### It is intended to be run when on a master branch, and warns when it isn't.
-gclean (){
+function gclean (){
   local BRANCH=`git rev-parse --abbrev-ref HEAD`
   # Warning if not on a master* branch
   if [[ $BRANCH != master* ]]
