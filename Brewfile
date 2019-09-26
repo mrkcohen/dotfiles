@@ -26,7 +26,7 @@ brew 'rbenv'
 brew 'python2'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
-# brew 'pyenv-virtualenvwrapper'
+brew 'pyenv-virtualenvwrapper'
 brew 'tmux'
 
 ## Caskfile
