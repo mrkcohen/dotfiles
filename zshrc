@@ -151,8 +151,6 @@ zmodload -i zsh/complist
 ###
 ### Path-ey things
 ###
-export PATH=$(pyenv root)/shims:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
-export PATH="$PATH:/Users/mikecohen/code/arcanist/bin/"
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; else echo rbenv not installed; fi
