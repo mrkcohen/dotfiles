@@ -28,6 +28,8 @@ brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'pyenv-virtualenvwrapper'
 brew 'tmux'
+brew 'scalastyle'
+brew 'sbt'
 
 ## Caskfile
 cask '1password'
