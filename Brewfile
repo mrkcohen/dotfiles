@@ -2,7 +2,7 @@
 
 # Taps
 tap 'Homebrew/bundle'
-tap 'caskroom/fonts'
+tap 'homebrew/cask-fonts'
 tap 'sambadevi/powerlevel9k'
 
 # Basics
