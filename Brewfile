@@ -22,6 +22,7 @@ brew 'scala'
 # Programming
 # brew 'apache-spark'
 brew 'jq'
+brew 'npm'
 brew 'R'
 brew 'rbenv'
 brew 'python3'
