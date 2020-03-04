@@ -55,8 +55,8 @@ HISTFILESIZE=100000
 HISTSIZE=10000
 
 ### Source other bash files with specific/private setups
-if [ -f ~/.pax_specifics ] ; then source ~/.pax_specifics; fi
-alias paxcfg="atom ~/.pax_specifics"
+if [ -f ~/.substack_imports ] ; then source ~/.substack_imports; fi
+alias sscfg="atom ~/.substack_imports"
 
 ### Aliases
 alias bp="atom ~/code/dotfiles/bash_profile"
