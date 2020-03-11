@@ -167,3 +167,6 @@ alias showhidefileson='defaults write com.apple.Finder AppleShowAllFiles YES; ki
 alias showhidefilesoff='defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder'
 
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
