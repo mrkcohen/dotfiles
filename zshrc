@@ -144,9 +144,6 @@ zmodload -i zsh/complist
 ### aws completion
 # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
-### Imported from bash_profile
-
-### TODO: Understand the below better
 
 ###
 ### Path-ey things
@@ -154,13 +151,6 @@ zmodload -i zsh/complist
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; else echo rbenv not installed; fi
-
-# pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; else echo pyenv not installed; fi
-
-# generate ctags in different languages
-# alias ctags_ruby='ctags -R --languages=ruby --exclude=.git --exclude=vendor/bundle --exclude=node_modules --exclude=coverage'
-# alias ctags_python='ctags -R --languages=python --exclude=.git --exclude=node_modules --exclude=coverage'
 
 # toggle show/hide hidden files in Finder
 alias showhidefileson='defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder'
