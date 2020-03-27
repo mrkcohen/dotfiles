@@ -31,6 +31,7 @@ brew 'python3'
 brew 'tmux'
 brew 'scalastyle'
 brew 'sbt'
+brew 'yarn'
 
 ## Caskfile
 cask '1password'
