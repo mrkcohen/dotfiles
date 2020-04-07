@@ -160,3 +160,16 @@ export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 # added by Snowflake SnowSQL installer v1.2
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+
+# Datacoral
+if [[ ":$PATH:" != *":$HOME/.datacoral/cli/bin:"* ]];
+then
+  export PATH=$HOME/.datacoral/cli/bin:$PATH
+fi
+
+# Android Studio
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
