@@ -25,6 +25,7 @@
 	re = remote -v
 	recent-branches = --paginate for-each-ref --format='%(committerdate:relative)%09%(refname:short)' --sort='-committerdate' refs/heads
 	recent-branches-origin = --paginate for-each-ref --format='%(committerdate:relative)%09%(refname:short)' --sort='-committerdate' refs/remotes/origin
+	sneak = commit --amend --no-edit
 	st = status
 	sup = "submodule foreach 'git co master; git up'"
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
