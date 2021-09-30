@@ -4,6 +4,7 @@
 	signingkey = DDFF00C6EFA2CB38A118060A92E63FE3C7E259A3
 [core]
 	excludesfile = /Users/mikecohen/.gitignore
+	trustctime = false
 [rerere]
 	enabled = 1
 [remote "origin"]
