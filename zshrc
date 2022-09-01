@@ -83,6 +83,14 @@ alias gd='git diff'
 alias gr='git rebase origin/master'
 alias gu='git add . && git ci --amend --no-edit'
 
+function gmm() {
+    local branch=$(current_branch)
+    git checkout master
+    git pull
+    git checkout $branch
+    git merge master
+}
+
 # gsr = Git Search Replace
 function gsr() {
     search_string=$1
