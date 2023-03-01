@@ -48,7 +48,7 @@ POWERLEVEL9K_VIRTUALENV_BACKGROUND="white"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Source/turn on Powerlevel9k
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+source /Users/mikecohen/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 
 # Misc
 HISTFILESIZE=100000
@@ -209,3 +209,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/usr/local/sbin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
