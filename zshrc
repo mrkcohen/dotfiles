@@ -82,6 +82,7 @@ alias .b='source ~/.bashrc && source ~/.bash_profile'
 alias gd='git diff'
 alias gr='git rebase origin/master'
 alias gu='git add . && git ci --amend --no-edit'
+alias slackers='git log --pretty="format:%an" --since="1 month ago" | sort | uniq -c | sort -rn'
 
 function gmm() {
     local branch=$(current_branch)
