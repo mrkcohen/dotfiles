@@ -85,6 +85,7 @@ alias gu='git add . && git ci --amend --no-edit'
 
 function slackers() {
   local period=${1:-month}
+  echo "Commit activity for the last $period"
   git log --pretty="format:%an" --since="1 $period ago" | sort | uniq -c | sort -rn
 }
 
