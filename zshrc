@@ -216,3 +216,5 @@ export PATH="/usr/local/sbin:$PATH"
 # Added by Windsurf
 export PATH="/Users/mikecohen/.codeium/windsurf/bin:$PATH"
 alias surf="/Users/mikecohen/.codeium/windsurf/bin/windsurf"
+
+. "$HOME/.local/bin/env"
