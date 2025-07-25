@@ -89,6 +89,13 @@ function slackers() {
   git log --pretty="format:%an" --since="1 $period ago" | sort | uniq -c | sort -rn
 }
 
+function last_touched () {
+	git grep -n $1 | while IFS=: read f l c
+	do
+		git blame -L $l,$l $f
+	done
+}
+
 function gmm() {
     local branch=$(current_branch)
     git checkout master
@@ -218,3 +225,6 @@ export PATH="/Users/mikecohen/.codeium/windsurf/bin:$PATH"
 alias surf="/Users/mikecohen/.codeium/windsurf/bin/windsurf"
 
 . "$HOME/.local/bin/env"
+
+# PostgreSQL
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
