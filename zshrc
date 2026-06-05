@@ -222,3 +222,5 @@ alias surf="/Users/mikecohen/.codeium/windsurf/bin/windsurf"
 
 # PostgreSQL
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+export CHALK_INSTALL="/Users/mikecohen/.chalk"
+export PATH="$CHALK_INSTALL/bin:$PATH"
