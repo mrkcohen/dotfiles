@@ -83,10 +83,10 @@ alias gd='git diff'
 alias gr='git rebase origin/master'
 alias gu='git add . && git ci --amend --no-edit'
 
-function slackers() {
-  local period=${1:-month}
-  echo "Commit activity for the last $period"
-  git log --pretty="format:%an" --since="1 $period ago" | sort | uniq -c | sort -rn
+slackers() {
+  local since="${*:-1 month}"
+  echo "Commit activity since $since"
+  git log --pretty="format:%an" --since="$since" | sort | uniq -c | sort -rn
 }
 
 function gmm() {
@@ -222,5 +222,3 @@ alias surf="/Users/mikecohen/.codeium/windsurf/bin/windsurf"
 
 # PostgreSQL
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
-export CHALK_INSTALL="/Users/mikecohen/.chalk"
-export PATH="$CHALK_INSTALL/bin:$PATH"
