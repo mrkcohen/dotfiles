@@ -85,7 +85,15 @@ alias gu='git add . && git ci --amend --no-edit'
 
 slackers() {
   local since="${*:-1 month}"
-  echo "Commit activity since $since"
+
+  case "$since" in
+    day|week|month|year|quarter)
+      since="1 $since ago"
+      ;;
+    *)
+      ;;
+  esac
+
   git log --pretty="format:%an" --since="$since" | sort | uniq -c | sort -rn
 }
 
